@@ -1,0 +1,33 @@
+.form-grid {
+  display: grid;
+  width: 600px;
+  grid-template-columns: 5rem 1fr 5rem 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+label {
+  font-weight: 580;
+  font-size: small;
+  /* text-transform: uppercase; */
+}
+
+input {
+  /* margin-left: 1rem; */
+}
+
+hr {
+  margin: 1.4rem 0;
+}
+
+button#add-job {
+  grid-column: 1;
+  grid-row: 4;
+  cursor: pointer;
+}
+
+button#add-qualification {
+  width: fit-content;
+  white-space: nowrap;
+  cursor: pointer;
+}

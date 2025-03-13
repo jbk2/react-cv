@@ -1,0 +1,14 @@
+@font-face {
+  font-family: raleway;
+  src: url(../fonts/raleway.ttf);
+}
+
+html {
+  font-family: 'raleway';
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+}
