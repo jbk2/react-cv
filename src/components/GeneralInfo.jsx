@@ -1,16 +1,10 @@
-import { useState } from "react"
+// import { useState } from "react"
 
-function GeneralInfo() {
-  const [ state, setState ] = useState({
-    firstName:"",
-    lastName:"",
-    email:"",
-    telephone:""
-  })
+function GeneralInfo({generalInfo, setGeneralInfo}) {
 
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setState(prevState => ({
+    setGeneralInfo(prevState => ({
       ...prevState,
       [id]: value
     }));
@@ -20,19 +14,19 @@ function GeneralInfo() {
     <section>
       <h3>General Info</h3>
       <form action="#" className="form-grid">
-        <label htmlFor="first-name">First name</label>
+        <label htmlFor="firstName">First name</label>
         <input
           type="text"
           id="firstName"
-          value={state.firstName}
+          value={generalInfo.firstName}
           onChange={handleChange}
         />
         
-        <label htmlFor="last-name">Last name</label>
+        <label htmlFor="lastName">Last name</label>
         <input
           type="text"
           id="lastName"
-          value={state.lastName}
+          value={generalInfo.lastName}
           onChange={handleChange}
         />
         
@@ -40,7 +34,7 @@ function GeneralInfo() {
         <input
           type="email"
           id="email"
-          value={state.email}
+          value={generalInfo.email}
           onChange={handleChange}
         />
         
@@ -48,7 +42,7 @@ function GeneralInfo() {
         <input
           type="text"
           id="telephone"
-          value={state.telephone}
+          value={generalInfo.telephone}
           onChange={handleChange}
         />
       </form>
