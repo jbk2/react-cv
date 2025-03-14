@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import '../assets/stylesheets/Header.css'
 
-export default function Header() {
-  const [selectedView, setSelectedView] = useState('Edit CV');
-
+export default function Header({selectedView, setSelectedView}) {
   const handleClick = (view) => {
     setSelectedView(view);
-    if(selectedView === 'View CV') {
-      
-    }
   } 
 
   return (
