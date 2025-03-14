@@ -1,4 +1,5 @@
 function EducationalInfo({educationalInfo, setEducationalInfo}) {
+  
   const handleChange = (id, fieldName, value) => {
     setEducationalInfo(prevState => ({
       ...prevState,
@@ -8,13 +9,30 @@ function EducationalInfo({educationalInfo, setEducationalInfo}) {
       }
     }));
   };
+
+  const handleAddQualification = () => {
+    const newID = crypto.randomUUID()
+    setEducationalInfo(prevstate => ({
+      ...prevstate,
+      [newID]: { qualificationTitle: '', awardYear: ''},
+    }));
+  };
+
+  const handleDeleteQualification = (id) => {
+    setEducationalInfo(prevState => {
+      const newState = {...prevState};
+      delete newState[id];
+      return newState;
+    });
+  };
   
   return(
     <section>
       <h3>Education</h3>
-      <form action="#">
-        {Object.entries(educationalInfo).map(([id, entry]) => (
-          <div key={id} className="qualification-entry form-grid">
+      {Object.entries(educationalInfo).map(([id, entry], index) => (
+        <>
+          {index > 0 && <hr/> }
+          <form key={id} className="qualification-entry col5-grid" action="#">
             <label htmlFor={`qualificationTitle-${id}`}>Qualification Title</label>
             <input
               type="text"
@@ -29,12 +47,13 @@ function EducationalInfo({educationalInfo, setEducationalInfo}) {
               value={entry.awardYear}
               onChange={(e) => handleChange(id, 'awardYear', e.target.value)}
             />
-          </div>
-        ))}
-        
-        <button id="add-qualification">Add Qualification</button>
-      </form>
-      <hr />
+            <button className="delete" onClick={() => handleDeleteQualification(id)}>❌</button>
+          </form>
+        </>
+      ))}
+      
+      <button id="add-qualification" onClick={handleAddQualification}>Add Qualification</button>
+      <hr className="sectionHR"/>
     </section>
   )
 }

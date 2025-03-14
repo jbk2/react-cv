@@ -13,7 +13,7 @@ function GeneralInfo({generalInfo, setGeneralInfo}) {
   return(
     <section>
       <h3>General Info</h3>
-      <form action="#" className="form-grid">
+      <form action="#" className="col4-grid">
         <label htmlFor="firstName">First name</label>
         <input
           type="text"
@@ -46,7 +46,7 @@ function GeneralInfo({generalInfo, setGeneralInfo}) {
           onChange={handleChange}
         />
       </form>
-      <hr />
+      <hr className="sectionHR"/>
     </section>
   )
 }

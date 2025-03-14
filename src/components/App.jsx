@@ -10,6 +10,7 @@ import '../assets/stylesheets/form.css'
 function App() {
   const [selectedView, setSelectedView] = useState('Edit CV');
   const [generalInfo, setGeneralInfo] = useState({firstName:'', lastName:'', email:'', telephone:''})
+  
   const [educationalInfo, setEducationalInfo] = useState(() => {
     const initialID = crypto.randomUUID();
     return {
@@ -17,7 +18,13 @@ function App() {
     };
   });
 
-  const [employmentInfo, setEmploymentInfo] = useState({employerName:'', jobTitle:'', startDate:'', endDate:'', roleDescription:''})
+  const [employmentInfo, setEmploymentInfo] = useState(() => {
+    const initialID = crypto.randomUUID()
+    return {
+      [initialID]: { employerName:'', jobTitle:'', startDate:'', endDate:'', roleDescription:'' }
+    };
+  });
+
   return (
     <>
       <Header selectedView={selectedView} setSelectedView={setSelectedView} />
