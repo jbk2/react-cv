@@ -6,7 +6,7 @@ A simple CV builder application allowing users to input CV info and toggle from 
 
 ## Technical implementation details
 - React project created with Vite
-- Vanilla CSS, JSX, and JavaScript 
+- Vanilla CSS (using CSS modules), JSX, and JavaScript
 - React hooks; useState
 
 

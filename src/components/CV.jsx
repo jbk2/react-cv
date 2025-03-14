@@ -1,8 +1,10 @@
+import styles from '../assets/stylesheets/CV.module.css'
 import React from "react";
+
 function CV({generalInfo, educationalInfo, employmentInfo}) {
   return(
     <div>
-      <section>
+      <section className={styles.section}>
         <h3>General Info</h3>
         <ul>
           <li>First Name - {generalInfo.firstName}</li>
@@ -11,7 +13,7 @@ function CV({generalInfo, educationalInfo, employmentInfo}) {
           <li>Telephone - {generalInfo.telephone}</li>
         </ul>
       </section>
-      <section>
+      <section className={styles.section}>
         <h3>Educational Info</h3>
         <ul>
           {Object.entries(educationalInfo).map(([id, entry]) => (
@@ -26,7 +28,7 @@ function CV({generalInfo, educationalInfo, employmentInfo}) {
           ))}
         </ul>
       </section>
-      <section>
+      <section className={styles.section}>
         <h3>Employment History</h3>
         {Object.entries(employmentInfo).map(([id, job]) => (
           <React.Fragment key={id}>

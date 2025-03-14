@@ -1,0 +1,21 @@
+.section > h3 {
+  /* padding: 0; */
+  margin: 0;
+  /* margin-bottom: 0.6rem; */
+  position: absolute;
+  top: -0.8rem;
+
+}
+
+.section {
+  width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: rgb(255, 253, 228);
+  margin-bottom: 1rem;
+  padding: 0.2rem;
+  border: 2px solid rgb(246, 246, 186);
+  border-radius: 0.4rem;
+}
