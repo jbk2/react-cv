@@ -17,8 +17,9 @@ A simple CV builder application allowing users to input CV info and toggle from 
 - Open the browser and navigate to `http://localhost:5173/`
 
 ### Todo's
-- Adapt EducaitonInfo to store multiple education entries, and to add and remove entries
+- Adapt EducationInfo to store multiple education entries, and to add and remove entries
 - Adapt ExperienceInfo to store multiple experience entries, and to add and remove entries
+- front end validation on all inputs
 - Add a reset button to clear the form and start over
 - Add a preview mode to view the CV in a printable format
 - Add a download button to download the CV as a PDF

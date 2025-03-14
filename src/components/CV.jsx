@@ -1,3 +1,4 @@
+import React from "react";
 function CV({generalInfo, educationalInfo, employmentInfo}) {
   return(
     <div>
@@ -13,8 +14,16 @@ function CV({generalInfo, educationalInfo, employmentInfo}) {
       <section>
         <h3>Educational Info</h3>
         <ul>
-          <li>Qualification Title - {educationalInfo.qualificationTitle}</li>
-          <li>Award Year - {educationalInfo.awardYear}</li>
+          {Object.entries(educationalInfo).map(([id, entry]) => (
+            <React.Fragment key={id}>
+              <li key={`qualificationTitle-${id}`}>
+                Qualification Title - {entry.qualificationTitle}
+              </li>
+              <li key={`awardYear-${id}`}>
+                Award Year - {entry.awardYear}
+              </li>
+            </React.Fragment>
+          ))}
         </ul>
       </section>
       <section>
