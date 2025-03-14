@@ -1,12 +1,30 @@
-# React + Vite
+# The Odin Project - React Course, [project 1](https://www.theodinproject.com/lessons/react-new-cv-application): CV builder application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## General description
 
-Currently, two official plugins are available:
+A simple CV builder application allowing users to input CV info and toggle from input/edit view to a view CV view. Simple React form components using the React useState hook to store state and render in a CV component view.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technical implementation details
+- React project created with Vite
+- Vanilla CSS, JSX, and JavaScript 
+- React hooks; useState
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+- Clone the repository
+- Run `npm install` to install the dependencies
+- Run `npm run dev` to start the development server
+- Open the browser and navigate to `http://localhost:5173/`
+
+### Todo's
+- Adapt EducaitonInfo to store multiple education entries, and to add and remove entries
+- Adapt ExperienceInfo to store multiple experience entries, and to add and remove entries
+- Add a reset button to clear the form and start over
+- Add a preview mode to view the CV in a printable format
+- Add a download button to download the CV as a PDF
+- Add a save button to save the CV to local storage
+- Add a load button to load a saved CV from local storage
+- Add a delete button to delete a saved CV from local storage
+- Add a print button to print the CV
+- Add a share button to share the CV via email
+
