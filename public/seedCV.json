@@ -1,0 +1,52 @@
+{
+  "generalInfo": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@example.com",
+    "telephone": "+1234567890"
+  },
+  "eduInfo": {
+    "1a2b3c4d": {
+      "qualificationTitle": "Bachelor of Science in Computer Science",
+      "awardYear": "2015"
+    },
+    "2b3c4d5e": {
+      "qualificationTitle": "Master of Business Administration",
+      "awardYear": "2018"
+    },
+    "3c4d5e6f": {
+      "qualificationTitle": "Ph.D. in Artificial Intelligence",
+      "awardYear": "2022"
+    }
+  },
+  "employmentInfo": {
+    "a1b2c3d4": {
+      "employerName": "Tech Solutions Inc.",
+      "jobTitle": "Software Engineer",
+      "startDate": "2016-05-01",
+      "endDate": "2019-08-15",
+      "roleDescription": "Developed and maintained web applications using React and Node.js."
+    },
+    "b2c3d4e5": {
+      "employerName": "Global Tech Ltd.",
+      "jobTitle": "Senior Developer",
+      "startDate": "2019-09-01",
+      "endDate": "2021-12-31",
+      "roleDescription": "Led a team of developers in creating enterprise solutions with cloud integration."
+    },
+    "c3d4e5f6": {
+      "employerName": "Innovate AI",
+      "jobTitle": "AI Research Scientist",
+      "startDate": "2022-01-15",
+      "endDate": "2023-06-30",
+      "roleDescription": "Worked on machine learning models for natural language processing."
+    },
+    "d4e5f6g7": {
+      "employerName": "Startup XYZ",
+      "jobTitle": "CTO",
+      "startDate": "2023-07-01",
+      "endDate": "Present",
+      "roleDescription": "Overseeing the technical vision and product development at a growing startup."
+    }
+  }
+}
