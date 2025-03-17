@@ -17,9 +17,11 @@ A simple CV builder application allowing users to input CV info and toggle from 
 - Open the browser and navigate to `http://localhost:5173/`
 
 ### Todo's
+- Add 'personal statement' to general info
 - style CV nicely
 - front end validation on all inputs
 - Add a reset button to clear the form and start over
+- Add a populate cv with seed data button
 - Add a preview mode to view the CV in a printable format
 - Add a download button to download the CV as a PDF
 - Add a save button to save the CV to local storage

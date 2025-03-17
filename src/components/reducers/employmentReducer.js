@@ -2,7 +2,7 @@ export default function employmentReducer(state, action) {
   switch(action.type) {
     case "UPDATE":
       return {
-        ...state, // { 1: {a: {}, b: {}}, 2: {}}
+        ...state,
         [action.id]: {
           ...state[action.id],
           [action.fieldName]: action.payload
