@@ -1,7 +1,6 @@
 import React from "react";
 
 function EducationalInfo({eduInfo, dispatchEduInfo}) {
-  
   return(
     <section>
       <h3>Education</h3>

@@ -30,17 +30,18 @@ function CV({generalInfo, eduInfo, employmentInfo}) {
       </section>
       <section className={styles.section}>
         <h3>Employment History</h3>
-        {Object.entries(employmentInfo).map(([id, job]) => (
-          <React.Fragment key={id}>
-            <ul key={id}>
-              <li key={`employerName-${id}`}>Employer Name - {job.employerName}</li>
-              <li key={`jobTitle-${id}`}>Job Title - {job.jobTitle}</li>
-              <li key={`startDate-${id}`}>Start Date - {job.startDate}</li>
-              <li key={`endDate-${id}`}>End Date - {job.endDate}</li>
-              <li key={`roleDescription-${id}`}>Role Description - {job.roleDescription}</li>
-            </ul>
-          </React.Fragment>
-        ))}
+        <ul>
+          {Object.entries(employmentInfo).map(([id, job], index) => (
+            <React.Fragment key={id}>
+                {index > 0 && <hr/> }
+                <li key={`employerName-${id}`}>Employer Name - {job.employerName}</li>
+                <li key={`jobTitle-${id}`}>Job Title - {job.jobTitle}</li>
+                <li key={`startDate-${id}`}>Start Date - {job.startDate}</li>
+                <li key={`endDate-${id}`}>End Date - {job.endDate}</li>
+                <li key={`roleDescription-${id}`}>Role Description - {job.roleDescription}</li>
+            </React.Fragment>
+          ))}
+        </ul>
       </section>
     </div>
   )

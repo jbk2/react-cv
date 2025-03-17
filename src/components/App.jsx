@@ -1,51 +1,25 @@
 import { useState } from 'react'
 import { useReducer } from 'react'
 import '../assets/stylesheets/App.css'
+import '../assets/stylesheets/form.css'
 import Header from './Header.jsx'
 import GeneralInfo from './GeneralInfo.jsx'
 import EducationalInfo from './EducationalInfo.jsx'
+import educationReducer from './reducers/educationReducer.js'
 import EmploymentInfo from './EmploymentInfo.jsx'
+import employmentReducer from './reducers/employmentReducer.js'
 import CV from './CV.jsx'
-import '../assets/stylesheets/form.css'
 
 function App() {
   const [selectedView, setSelectedView] = useState('Edit CV');
-  const [generalInfo, setGeneralInfo] = useState({firstName:'', lastName:'', email:'', telephone:''})
-  
-  const initialID = crypto.randomUUID();
-  const [eduInfo, dispatchEduInfo] = useReducer((state, action) => {
-    switch(action.type) {
-      case "UPDATE":
-        return {...state,
-          [action.id]: {
-            ...state[action.id],
-            [action.fieldName]: action.payload
-          }
-        }
-      case "DELETE": {
-        const newState = {...state};
-        delete newState[action.id];
-        return newState;
-      }
-      case "ADD": {
-        const newID = crypto.randomUUID()
-        return {...state,
-          [newID]: {qualificationTitle: '', awardYear: ''}
-        };
-      }
-        
-    }
-  }, {
-    [initialID]: { qualificationTitle:'', awardYear:'' }
-  })
-
-  const [employmentInfo, setEmploymentInfo] = useState(() => {
-    const initialID = crypto.randomUUID()
-    return {
-      [initialID]: { employerName:'', jobTitle:'', startDate:'', endDate:'', roleDescription:'' }
-    };
+  const [generalInfo, setGeneralInfo] = useState({firstName:'', lastName:'', email:'', telephone:''});
+  const [eduInfo, dispatchEduInfo] = useReducer(educationReducer, {
+    [crypto.randomUUID()]: {qualificationTitle: '', awardYear: ''}
   });
-
+  const [employmentInfo, dispatchEmploymentInfo] = useReducer(employmentReducer, {
+    [crypto.randomUUID()]: { employerName:'', jobTitle:'', startDate:'', endDate:'', roleDescription:'' }
+  });
+ 
   return (
     <>
       <Header selectedView={selectedView} setSelectedView={setSelectedView} />
@@ -54,7 +28,7 @@ function App() {
           <>
             <GeneralInfo generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
             <EducationalInfo eduInfo={eduInfo} dispatchEduInfo={dispatchEduInfo} />
-            <EmploymentInfo employmentInfo={employmentInfo} setEmploymentInfo={setEmploymentInfo} />
+            <EmploymentInfo employmentInfo={employmentInfo} dispatchEmploymentInfo={dispatchEmploymentInfo} />
           </>
         ) : (
           <CV generalInfo={generalInfo} eduInfo={eduInfo} employmentInfo={employmentInfo} />
