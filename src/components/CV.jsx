@@ -1,7 +1,7 @@
 import styles from '../assets/stylesheets/CV.module.css'
 import React from "react";
 
-function CV({generalInfo, educationalInfo, employmentInfo}) {
+function CV({generalInfo, eduInfo, employmentInfo}) {
   return(
     <div>
       <section className={styles.section}>
@@ -16,7 +16,7 @@ function CV({generalInfo, educationalInfo, employmentInfo}) {
       <section className={styles.section}>
         <h3>Educational Info</h3>
         <ul>
-          {Object.entries(educationalInfo).map(([id, entry]) => (
+          {Object.entries(eduInfo).map(([id, entry]) => (
             <React.Fragment key={id}>
               <li key={`qualificationTitle-${id}`}>
                 Qualification Title - {entry.qualificationTitle}

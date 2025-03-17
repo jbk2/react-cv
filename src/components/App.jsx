@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useReducer } from 'react'
 import '../assets/stylesheets/App.css'
 import Header from './Header.jsx'
 import GeneralInfo from './GeneralInfo.jsx'
@@ -11,12 +12,32 @@ function App() {
   const [selectedView, setSelectedView] = useState('Edit CV');
   const [generalInfo, setGeneralInfo] = useState({firstName:'', lastName:'', email:'', telephone:''})
   
-  const [educationalInfo, setEducationalInfo] = useState(() => {
-    const initialID = crypto.randomUUID();
-    return {
-      [initialID]: { qualificationTitle:'', awardYear:'' }
-    };
-  });
+  const initialID = crypto.randomUUID();
+  const [eduInfo, dispatchEduInfo] = useReducer((state, action) => {
+    switch(action.type) {
+      case "UPDATE":
+        return {...state,
+          [action.id]: {
+            ...state[action.id],
+            [action.fieldName]: action.payload
+          }
+        }
+      case "DELETE": {
+        const newState = {...state};
+        delete newState[action.id];
+        return newState;
+      }
+      case "ADD": {
+        const newID = crypto.randomUUID()
+        return {...state,
+          [newID]: {qualificationTitle: '', awardYear: ''}
+        };
+      }
+        
+    }
+  }, {
+    [initialID]: { qualificationTitle:'', awardYear:'' }
+  })
 
   const [employmentInfo, setEmploymentInfo] = useState(() => {
     const initialID = crypto.randomUUID()
@@ -32,11 +53,11 @@ function App() {
         {selectedView === "Edit CV" ? (
           <>
             <GeneralInfo generalInfo={generalInfo} setGeneralInfo={setGeneralInfo} />
-            <EducationalInfo educationalInfo={educationalInfo} setEducationalInfo={setEducationalInfo} />
+            <EducationalInfo eduInfo={eduInfo} dispatchEduInfo={dispatchEduInfo} />
             <EmploymentInfo employmentInfo={employmentInfo} setEmploymentInfo={setEmploymentInfo} />
           </>
         ) : (
-          <CV generalInfo={generalInfo} educationalInfo={educationalInfo} employmentInfo={employmentInfo} />
+          <CV generalInfo={generalInfo} eduInfo={eduInfo} employmentInfo={employmentInfo} />
         )}
       </main>
     </>
