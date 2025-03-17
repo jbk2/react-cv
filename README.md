@@ -21,7 +21,7 @@ A simple CV builder application allowing users to input CV info and toggle from 
 - style CV nicely
 - front end validation on all inputs
 - Add a reset button to clear the form and start over
-- Add a populate cv with seed data button
+- Add a populate cv with seed data button (use a JSON file for content and use useEffect to import it)
 - Add a preview mode to view the CV in a printable format
 - Add a download button to download the CV as a PDF
 - Add a save button to save the CV to local storage

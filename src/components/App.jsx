@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { useReducer } from 'react'
+import { useState, useReducer } from 'react'
 import '../assets/stylesheets/App.css'
 import '../assets/stylesheets/form.css'
 import Header from './Header.jsx'
